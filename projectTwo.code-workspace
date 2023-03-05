@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../projectTwo"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "parallax"
+  }
+}

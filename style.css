@@ -1,0 +1,1121 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to top, #fff, transparent);
+  z-index: 999;
+}
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+section img#man {
+  transform-origin: bottom;
+}
+#text {
+  position: relative;
+  color: #8360c3 #2ebf91;
+  font-size: 10vh;
+  text-shadow: rgba(255, 162, 0, 0.9) 0px 0px 29px;
+}
+.sec {
+  position: relative;
+  padding: 100px;
+  width: 70%;
+  padding-top: 0px;
+  margin: 0 auto;
+  z-index: 20000;
+}
+.sec h2 {
+  font-size: 3.5;
+  margin-bottom: 10px;
+  color: #20496a;
+}
+.sec p {
+  font-size: 1.2em;
+  color: #20496a;
+}
+
+/* .................... */
+
+/* ..........checkBox................ */
+.imgicon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+  width: 45px;
+}
+.checkbox {
+  z-index: 200;
+  top: 10px;
+  left: 10px;
+  position: relative;
+  height: 40px;
+  width: 100px;
+  background: #2e394d;
+  border-radius: 30px;
+}
+.checkbox-input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  z-index: 1;
+  -webkit-appearance: none;
+}
+.checkbox-icons::before {
+  position: absolute;
+  content: "\f00d";
+  font-family: "Font Awesome 5 free";
+  font-weight: 900;
+  color: white;
+  height: 35px;
+  width: 35px;
+  background: #c34a4a;
+  border-radius: 50%;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+.checkbox-input:checked + label .checkbox-icons::before {
+  background: #8bc34a;
+  transform: translateY(-50%) rotate(360deg);
+  left: calc(100% - 38px);
+  content: "\f00c";
+}
+
+/* .............Search Engine Input.................... */
+#searchNumberTwo {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: none;
+  display: none;
+}
+
+/* ...............cards.................... */
+.cardBox {
+  /* width and height cannot be used on inline elements */
+  font-size: 15px;
+  border: 1px solid;
+  margin: 10px;
+
+  border-radius: 20px;
+  box-shadow: 10px 20px 20px #a633cc;
+  overflow: hidden;
+  position: relative;
+  /* ............................ */
+  width: 300px;
+  height: 200px;
+}
+.shiftZIndex {
+  z-index: 999;
+}
+.shiftZIndexBack {
+  z-index: 1000;
+}
+.cardBox::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 110%;
+  background: linear-gradient(#1dcde2, #f20d4b);
+  animation: animate 15s linear infinite;
+  overflow: hidden;
+}
+.cardBox::after {
+  content: "";
+  position: absolute;
+  background: #a633cc;
+  background: -webkit-radial-gradient(left, #a633cc, #2e0abf);
+  background: -moz-radial-gradient(left, #a633cc, #2e0abf);
+  background: radial-gradient(to right, #a633cc, #2e0abf);
+  inset: 4px;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.border-design {
+  position: relative;
+  color: white;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+}
+#contentDiv {
+  margin-top: 90px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.upperCaseForSymbol {
+  color: gold;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 601px) {
+  #searchNumberTwo {
+    display: flex;
+  }
+}
+
+/* ....................Screen sizing adjustments for navbar...................... */
+@media screen and (min-width: 1130px) {
+  .container {
+    display: flex;
+  }
+  #dropdownMenu {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  #dropdownMenu {
+    display: none;
+  }
+}
+@media screen and (max-width: 850px) {
+}
+
+/* .....................search bar........................ */
+.searchNumberTwo {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 60px;
+  transition: 0.5s;
+  box-shadow: 0 0 0 5px #8017d1;
+  overflow: hidden;
+  top: 100px;
+  left: 50px;
+  z-index: 10000;
+  position: fixed;
+}
+.searchNumberTwo .iconForSearchBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+.searchNumberTwo .iconForSearchBar::before {
+  content: "";
+  left: 18px;
+  top: 18px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #8017d1;
+  border-radius: 50%;
+  transform: translate(-5px, -5px);
+}
+.searchNumberTwo .iconForSearchBar::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 14px;
+  background: #8017d1;
+  transform: translate(8px, 8px) rotate(310deg);
+}
+.active {
+  width: 360px;
+}
+.searchNumberTwo .inputinput {
+  position: relative;
+  width: 300px;
+  height: 60px;
+  left: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchNumberTwo .inputinput input {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 10px 0;
+}
+.clearclear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  right: 15px;
+  background: #ff0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clearclear::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #f20d4b;
+  transform: rotate(45deg);
+}
+.clearclear::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #f20d4b;
+  transform: rotate(315deg);
+}
+/* ............................more............... */
+/* ............................DropDownMenu new design............... */
+#droppy {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  gap: 4px;
+}
+#droppy li {
+  position: relative;
+  list-style: none;
+}
+#droppy li a {
+  position: relative;
+  font-size: 1.3em;
+  text-decoration: none;
+  line-height: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: black;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+#droppy li a::before {
+  content: attr(data-text);
+  position: absolute;
+  color: var(--clr);
+  width: 0;
+  overflow: hidden;
+  transition: 1s;
+  border-right: 8px solid var(--clr);
+  -webkit-text-stroke: 1px var(--clr);
+}
+#droppy li a:hover::before {
+  width: 105%;
+  filter: drop-shadow(0 0 25px var(--clr));
+}
+/* ................parallax background */
+.wrapper-parallax {
+  height: 100vh;
+  width: 100%;
+  background: url(./assets/networking.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  transform-style: preserve-3d;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 30000;
+}
+
+/* .....................preloader for card content.............. */
+.preLoader {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.spinnerHere {
+  position: relative;
+}
+.preLoader::after {
+  content: "";
+  display: block;
+  position: relative;
+  left: 28%;
+  top: 20%;
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-color: blue;
+  border-top-color: transparent;
+  border-width: 4px;
+  border-radius: 50%;
+  -webkit-animation: spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
+  /* z-index: 10000; */
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* ................................... */
+/* down here is the loader for the main content */
+.preLoaderForFirstCallToAJAX {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+}
+.preLoaderForFirstCallToAJAX::after {
+  content: "";
+  display: block;
+  position: relative;
+  left: 40%;
+  top: 25%;
+  right: 45%;
+  width: 200px;
+  height: 200px;
+  border-style: solid;
+  border-color: black;
+  border-top-color: transparent;
+  border-width: 4px;
+  border-radius: 50%;
+  -webkit-animation: spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
+  /* z-index: 10000; */
+}
+/* ...................header title................. */
+/* .......................parallax background scrolling */
+#wrapper-parallax-animation {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #3586ff;
+}
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(./pictures/wave.png);
+  background-size: 1000px 100px;
+  animation: animateTwo 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+.wave#wave-1 {
+  z-index: 1000;
+  opacity: 1;
+  background-position-x: 400px;
+}
+.wave#wave-2 {
+  z-index: 999;
+  opacity: 0.5;
+  background-position-x: 300px;
+}
+.wave#wave-3 {
+  z-index: 998;
+  opacity: 0.2;
+  background-position-x: 200px;
+}
+.wave#wave-4 {
+  z-index: 998;
+  opacity: 0.7;
+  background-position-x: 100px;
+}
+@keyframes animateTwo {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* .............new navbar........... */
+header {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  transform: scaleX(0);
+  opacity: 0;
+  transition: opacity 1s;
+}
+.menu {
+  padding: 2rem 2.5rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  background: #a633cc;
+  background: -webkit-radial-gradient(left, #a633cc, #2e0abf);
+  background: -moz-radial-gradient(left, #a633cc, #2e0abf);
+  background: radial-gradient(to right, #a633cc, #2e0abf);
+  z-index: 999;
+  border-radius: 3px;
+  cursor: pointer;
+  display: none;
+}
+.bar,
+.bar::before,
+.bar::after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 2px;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transition: all 650ms;
+}
+.bar::before {
+  top: -2rem;
+}
+.bar::after {
+  top: 1rem;
+}
+.open .bar {
+  background-color: transparent;
+}
+.open .bar::before {
+  transform: rotate(45deg);
+}
+.open .bar::after {
+  transform: rotate(-45deg);
+}
+.open .bar::before,
+.open .bar::after {
+  top: 0;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 6rem;
+  line-height: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+  text-transform: uppercase;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+.brand {
+  font-size: 1.5rem;
+  color: #fff;
+  background: #a633cc;
+  background: -webkit-radial-gradient(left, #a633cc, #2e0abf);
+  background: -moz-radial-gradient(left, #a633cc, #2e0abf);
+  background: radial-gradient(to right, #a633cc, #2e0abf);
+  padding: 0 1rem;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+.nav-link {
+  font-size: 1.5rem;
+  color: mediumpurple;
+  margin-right: 2rem;
+  padding: 0 1rem;
+  display: block;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: top;
+  transition: transform 650ms cubic-bezier(0.55, 0.55, 0.675, 0.19);
+}
+.nav-link:hover {
+  transform: rotateX(90deg);
+}
+.nav-item:last-child .nav-link {
+  margin-right: 0;
+}
+.nav-link::after {
+  background: #a633cc;
+  background: -webkit-radial-gradient(left, #a633cc, #2e0abf);
+  background: -moz-radial-gradient(left, #a633cc, #2e0abf);
+  background: radial-gradient(to right, #a633cc, #2e0abf);
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  padding: inherit;
+  color: #fff;
+  transform: rotateX(-90deg);
+  transform-origin: top;
+}
+.nav-item:nth-child(odd) {
+  animation: up 1s forwards;
+}
+.nav-item:nth-child(even) {
+  animation: down 1s forwards;
+}
+@keyframes up {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes down {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 658px) {
+  .brand {
+    margin: 0 auto;
+    animation: initial;
+    border-radius: 100%;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header {
+    perspective: 75rem;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    /* position: absolute; */
+  }
+  nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 35rem;
+    height: 100vh;
+    line-height: initial;
+    flex-direction: column;
+    box-shadow: none;
+    text-align: center;
+    transform: rotateY(180deg);
+    transform-origin: top left;
+    transition: transform 650ms cubic-bezier(0.55, 0.55, 0.675, 0.19);
+    background: #a633cc;
+    background: -webkit-radial-gradient(left, #a633cc, #2e0abf);
+    background: -moz-radial-gradient(left, #a633cc, #2e0abf);
+    background: radial-gradient(to right, #a633cc, #2e0abf);
+  }
+  nav ul {
+    flex-direction: column;
+    margin-top: -5rem;
+  }
+  .nav-item:nth-child(n) {
+    animation: initial;
+  }
+  .nav-link {
+    margin: 2rem 0;
+    color: white;
+  }
+  .nav-link:hover {
+    transform: rotateX(0deg);
+    color: wheat;
+  }
+  .open nav {
+    transform: rotateY(0);
+  }
+  .menu {
+    display: block;
+  }
+  .overlay.open {
+    transform: scaleX(1);
+  }
+  /* ............searchBox............... */
+  .searchNumberTwo {
+    top: 13px;
+    left: 15px;
+    max-width: 320px;
+  }
+}
+/* ...........searching searchBox........... */
+.searching {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  right: 55px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#searching-design {
+  color: blue;
+  width: 70px;
+  height: 70px;
+}
+.searching:hover {
+  cursor: pointer;
+}
+/* ..................credit card popup........................ */
+
+.credit-card {
+  z-index: 2000;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+.open-modal {
+  visibility: visible;
+}
+
+.credit-card .front {
+  background-color: hsl(200, 80%, 30%);
+  border: hsl(200, 80%, 10%);
+  border-radius: 0.5rem;
+  width: 625px;
+  height: 350px;
+  padding: 0.75rem 1rem;
+  padding-bottom: 1.25rem;
+}
+
+.credit-card .front {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.credit-card .card-data-row {
+  display: flex;
+  margin-bottom: 80px;
+}
+.credit-card .logo {
+  width: 40px;
+  height: 50px;
+  flex-grow: 0;
+}
+.credit-card .brand-name {
+  flex-grow: 1;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.credit-card .front::before {
+  content: "";
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+  background-color: hsl(0, 0%, 100%, 0.15);
+  top: -180px;
+  left: -150px;
+  z-index: -1;
+}
+.credit-card .front::after {
+  content: "";
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  border-radius: 100%;
+  background-color: hsl(0, 0%, 100%, 0.075);
+  top: 475px;
+  left: -150px;
+  z-index: -1;
+}
+/* ..........checkBox for popup................ */
+
+.checkbox-icons-for-popup::before {
+  position: absolute;
+  content: "\f00c";
+  font-family: "Font Awesome 5 free";
+  font-weight: 900;
+  color: white;
+  height: 35px;
+  width: 35px;
+  background: #8bc34a;
+  border-radius: 50%;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transition: 0.5s; */
+}
+.checkbox-input:checked + label .checkbox-icons-for-popup::before {
+  background: #c34a4a;
+  transform: translateY(-50%) rotate(360deg);
+  left: calc(100% - 38px);
+  content: "\f00d";
+}
+/* .............checkbox container */
+.popupcheckBoxContainer {
+  display: flex;
+  gap: 20px;
+}
+.deletepopup {
+  text-align: center;
+}
+/* .............this down here is for the realistic credit card font */
+.holder {
+  position: absolute;
+  font-family: kredit-front;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  text-shadow: -9px 8.7px 6px rgba(0, 0, 0, 0.8);
+  bottom: 20px;
+  left: 30px;
+  z-index: 20;
+  letter-spacing: 2px;
+  transform: translateZ(50px);
+}
+.bottomText {
+  position: relative;
+}
+/* ..........chip icon.............. */
+#chip {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 30px;
+  bottom: 5px;
+}
+.temp {
+  place-items: center;
+}
+.text-header {
+  text-align: center;
+}
+/* ..............................popup............................... */
+.disableInputBox {
+  pointer-events: none;
+}
+.addAbilityToTheSelectedItems {
+  pointer-events: auto;
+}
+
+.thisIsForAfterCheckBoxWasChosenToDelete:checked
+  + label
+  .checkbox-icons::before {
+  background: #8bc34a;
+  transform: translateY(-50%) rotate(360deg);
+  left: calc(100% - 38px);
+  content: "\f00c";
+}
+.transition :checked + label .checkbox-icons::before {
+  background: #8bc34a;
+  transform: translateY(-50%) rotate(360deg);
+  left: calc(100% - 38px);
+  content: "\f00c";
+}
+/* ...............close popup button......... */
+.close-btn {
+  visibility: hidden;
+  width: 60px;
+  height: 60px;
+
+  border-radius: 60px;
+  transition: 0.5s;
+  box-shadow: 0 0 0 5px red;
+  overflow: hidden;
+  top: 100px;
+  right: 50px;
+  z-index: 10000;
+  position: fixed;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+  color: lightcoral;
+  transition: 0.3s linear;
+  transform: rotate(180deg);
+}
+/* ....................... */
+
+.makeTheCardsDissapear {
+  visibility: hidden;
+  position: absolute;
+}
+/* ..............graph............ */
+
+#chartContainer {
+  margin-top: 10px;
+  width: 100%;
+  height: 200px;
+  visibility: hidden;
+}
+.chartContainerVisiblity {
+  visibility: visible;
+}
+.checkbox-input:hover {
+  cursor: pointer;
+}
+/* .................details of me................ */
+.close-btn {
+  position: fixed;
+  top: 10rem;
+  right: 10rem;
+  font-size: 6rem;
+  background: transparent;
+  border-color: transparent;
+  color: red;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: lightcoral;
+  transition: 0.3s linear;
+  transform: rotate(180deg);
+}
+/* ......................... */
+
+.boxOfme {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 400px;
+  background: #2b313e;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: none;
+}
+.boxOfme::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    #1e2635 0%,
+    #1e2635 25%,
+    transparent 25%,
+    transparent 50%,
+    #1e2635 50%,
+    #1e2635 75%,
+    transparent 75%,
+    transparent 100%
+  );
+  background-size: 200px;
+  transition: 0.5s;
+  z-index: 2;
+}
+.boxOfme::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    transparent 0%,
+    transparent 25%,
+    #1e2635 25%,
+    #1e2635 50%,
+    transparent 50%,
+    transparent 75%,
+    #1e2635 75%,
+    #1e2635 100%
+  );
+
+  background-size: 200px;
+  transition: 0.5s;
+  z-index: 2;
+}
+.boxOfme:hover::before {
+  left: -100%;
+}
+.boxOfme:hover::after {
+  left: 100%;
+}
+.boxOfme .contentOfMe {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: #fff;
+  background: #83dbc5;
+  background: -webkit-radial-gradient(left, #83dbc5, #1e7dde);
+  background: -moz-radial-gradient(left, #83dbc5, #1e7dde);
+  background: radial-gradient(to right, #83dbc5, #1e7dde);
+  z-index: 1;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+}
+.boxOfme .contentOfMe p {
+  font-size: 18px;
+  color: white;
+}
+.boxOfme .detailsOfme {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 3;
+  text-align: center;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.imageOfMe {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  position: relative;
+}
+.detailsOfme .imageOfMe img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+}
+.boxOfme .detailsOfme h3 {
+  margin: 20px 0 0;
+  padding: 0;
+  color: #fff;
+  font-size: 24px;
+}
+.boxOfme .detailsOfme h3 span {
+  font-size: 16px;
+}
+.boxOfme:hover .detailsOfme {
+  cursor: pointer;
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+@keyframes hoverMove {
+  50% {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+.HoverOverMe {
+  color: magenta;
+  margin-top: 20px;
+  animation: hoverMove 3s ease-in-out infinite;
+}
+/* ..................... */
+@media only screen and (max-width: 600px) {
+  .popupcheckBoxContainer {
+    display: flex;
+    gap: 3px;
+  }
+  .credit-card .front {
+    width: 500px;
+    padding: 0;
+  }
+  #text {
+    font-size: 8vh;
+  }
+}
+.popupText {
+  font-size: larger;
+}
+#color-for-bottom-about-text {
+  color: #a633cc;
+  font-weight: 800;
+}
+.forOpen{
+  z-index: 999;
+}
+.forClose{
+  z-index: 1000;
+}
